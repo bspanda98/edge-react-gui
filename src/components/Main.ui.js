@@ -743,6 +743,7 @@ export class MainComponent extends Component<Props> {
               component={FioConnectWalletConfirmConnector}
               renderTitle={this.renderTitle(s.strings.title_fio_connect_to_wallet)}
               renderLeftButton={this.renderBackButton(BACK)}
+              renderRightButton={this.renderMenuButton()}
               onLeft={Actions.pop}
             />
           </Stack>
