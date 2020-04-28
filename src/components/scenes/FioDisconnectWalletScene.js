@@ -155,6 +155,7 @@ export class FioDisconnectWalletScene extends Component<Props, State> {
             resetSlider={true}
             onSlidingComplete={this.confirm}
             sliderDisabled={!Object.keys(selectedToRemove).length}
+            parentStyle={styles.sliderStyle}
             disabledText={s.strings.send_confirmation_slide_to_confirm}
             showSpinner={disconnectWalletsLoading}
           />

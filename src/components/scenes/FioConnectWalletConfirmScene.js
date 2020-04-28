@@ -125,6 +125,7 @@ export class FioConnectWalletConfirmScene extends Component<Props, State> {
               resetSlider={true}
               onSlidingComplete={this.confirm}
               sliderDisabled={!acknowledge}
+              parentStyle={styles.sliderStyle}
               disabledText={s.strings.send_confirmation_slide_to_confirm}
               showSpinner={connectWalletsLoading}
             />
