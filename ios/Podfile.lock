@@ -1,11 +1,11 @@
 PODS:
   - boost-for-react-native (1.63.0)
-  - BugsnagReactNative (2.12.6):
-    - BugsnagReactNative/Core (= 2.12.6)
+  - BugsnagReactNative (2.23.8):
+    - BugsnagReactNative/Core (= 2.23.8)
     - React
-  - BugsnagReactNative/Core (2.12.6):
+  - BugsnagReactNative/Core (2.23.8):
     - React
-  - BVLinearGradient (2.5.3):
+  - BVLinearGradient (2.5.6):
     - React
   - disklet (0.4.5):
     - React
@@ -17,6 +17,9 @@ PODS:
     - FirebaseAnalytics (= 5.0.1)
   - Firebase/CoreOnly (5.3.0):
     - FirebaseCore (= 5.0.4)
+  - Firebase/Messaging (5.3.0):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (= 3.0.2)
   - FirebaseAnalytics (5.0.1):
     - FirebaseCore (~> 5.0)
     - FirebaseInstanceID (~> 3.0)
@@ -26,19 +29,27 @@ PODS:
     - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
   - FirebaseInstanceID (3.1.1):
     - FirebaseCore (~> 5.0)
+  - FirebaseMessaging (3.0.2):
+    - FirebaseCore (~> 5.0)
+    - FirebaseInstanceID (~> 3.0)
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - Protobuf (~> 3.1)
   - Folly (2018.10.22.00):
     - boost-for-react-native
     - DoubleConversion
     - glog
   - glog (0.3.5)
-  - GoogleToolboxForMac/Defines (2.1.0)
-  - "GoogleToolboxForMac/NSData+zlib (2.1.0)":
-    - GoogleToolboxForMac/Defines (= 2.1.0)
-  - nanopb (0.3.8):
-    - nanopb/decode (= 0.3.8)
-    - nanopb/encode (= 0.3.8)
-  - nanopb/decode (0.3.8)
-  - nanopb/encode (0.3.8)
+  - GoogleToolboxForMac/Defines (2.2.2)
+  - GoogleToolboxForMac/Logger (2.2.2):
+    - GoogleToolboxForMac/Defines (= 2.2.2)
+  - "GoogleToolboxForMac/NSData+zlib (2.2.2)":
+    - GoogleToolboxForMac/Defines (= 2.2.2)
+  - nanopb (0.3.9011):
+    - nanopb/decode (= 0.3.9011)
+    - nanopb/encode (= 0.3.9011)
+  - nanopb/decode (0.3.9011)
+  - nanopb/encode (0.3.9011)
+  - Protobuf (3.12.0)
   - React (0.59.10):
     - React/Core (= 0.59.10)
   - react-native-camera (1.13.1):
@@ -60,7 +71,7 @@ PODS:
     - React
   - react-native-mail (3.0.7):
     - React
-  - react-native-randombytes (3.5.1):
+  - react-native-randombytes (3.5.3):
     - React
   - react-native-safari-view (1.0.0):
     - React
@@ -119,11 +130,11 @@ PODS:
     - React/Core
     - React/fishhook
     - React/RCTBlob
-  - ReactNativeART (1.0.2):
+  - ReactNativeART (1.2.0):
     - React
   - ReactNativePermissions (1.0.6):
     - React
-  - RNCAsyncStorage (1.6.2):
+  - RNCAsyncStorage (1.11.0):
     - React
   - RNDeviceInfo (0.21.5):
     - React
@@ -131,7 +142,7 @@ PODS:
     - React
   - RNOpenAppSettings (1.0.0):
     - React
-  - RNShare (1.1.3):
+  - RNShare (1.2.1):
     - React
   - RNSound (0.10.12):
     - React/Core
@@ -140,7 +151,7 @@ PODS:
     - React/Core
   - RNStoreReview (0.1.5):
     - React
-  - RNVectorIcons (6.1.0):
+  - RNVectorIcons (6.6.0):
     - React
   - yoga (0.59.10.React)
 
@@ -151,6 +162,7 @@ DEPENDENCIES:
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - edge-login-ui-rn (from `../node_modules/edge-login-ui-rn`)
   - Firebase/Core (~> 5.3.0)
+  - Firebase/Messaging
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - react-native-camera (from `../node_modules/react-native-camera`)
@@ -194,8 +206,10 @@ SPEC REPOS:
     - FirebaseAnalytics
     - FirebaseCore
     - FirebaseInstanceID
+    - FirebaseMessaging
     - GoogleToolboxForMac
     - nanopb
+    - Protobuf
 
 EXTERNAL SOURCES:
   BugsnagReactNative:
@@ -261,8 +275,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
-  BugsnagReactNative: 7ba00c17a3dedfeea4dd011919962d415a231c49
-  BVLinearGradient: 0d985ec461359c82bc254f26d11008bdae50d17a
+  BugsnagReactNative: 0aacb961ccd13b4eb4ca44928b811d76b97d646d
+  BVLinearGradient: e3aad03778a456d77928f594a649e96995f1c872
   disklet: 4f586f90b70fdb46f06614a5b7342eda5c90f253
   DoubleConversion: bb338842f62ab1d708ceb63ec3d999f0f3d98ecd
   edge-login-ui-rn: df30e40a266baaa735ca158f5838d983ead22b2d
@@ -270,10 +284,12 @@ SPEC CHECKSUMS:
   FirebaseAnalytics: b3628aea54c50464c32c393fb2ea032566e7ecc2
   FirebaseCore: 62f1b792a49bb9e8b4073f24606d2c93ffc352f0
   FirebaseInstanceID: f3f0657372592ecdfdfe2cac604a5a75758376a6
+  FirebaseMessaging: 6894b8fe0a0cf26c3b13dad729f1131654ae0bdb
   Folly: de497beb10f102453a1afa9edbf8cf8a251890de
   glog: aefd1eb5dda2ab95ba0938556f34b98e2da3a60d
-  GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
-  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  GoogleToolboxForMac: 800648f8b3127618c1b59c7f97684427630c5ea3
+  nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  Protobuf: 2793fcd0622a00b546c60e7cbbcc493e043e9bb9
   React: 36d0768f9e93be2473b37e7fa64f92c1d5341eef
   react-native-camera: b322bc25f47536219473c6d00c666d221f7f2695
   react-native-contacts: f6e5c518598762081ff9cf7c70db36f71668538e
@@ -281,23 +297,23 @@ SPEC CHECKSUMS:
   react-native-firebase: c20ee01585998768935fc2cff74ff8e9740f1a73
   react-native-locale: bd8edf0e51706d469af3e2fa568a8102213a3139
   react-native-mail: 021d8ee60e374609f5689ef354dc8e36839a9ba6
-  react-native-randombytes: 1b6091800f62c6c393c6bc850ac089ebf63d4c0a
+  react-native-randombytes: 3638d24759d67c68f6ccba60c52a7a8a8faa6a23
   react-native-safari-view: 955d7160d159241b8e9395d12d10ea0ef863dcdd
   react-native-smart-splash-screen: a961513689f11d63e8496684c2fa4be2d24fe23b
   react-native-tcp: ec39d0ce136873220a2895a0e89dc33804fe0def
   react-native-webview: 5036ed4a973ad1deeeff118262d2df7b60b3419d
-  ReactNativeART: 103929e284be663b5a2f921ed912821f04120a70
+  ReactNativeART: 78edc68dd4a1e675338cd0cd113319cf3a65f2ab
   ReactNativePermissions: bf462424ca7823d1b8e6cb463184d6e7f151971b
-  RNCAsyncStorage: 60a80e72d95bf02a01cace55d3697d9724f0d77f
+  RNCAsyncStorage: d059c3ee71738c39834a627476322a5a8cd5bf36
   RNDeviceInfo: e7c5fcde13d40e161d8a27f6c5dc69c638936002
   RNFS: c9bbde46b0d59619f8e7b735991c60e0f73d22c1
   RNOpenAppSettings: 1169b90a275e9e18c5973e1608949f97d426e7f3
-  RNShare: 4f206fa36e384e95a0cbf79f2a92490647e93127
+  RNShare: 48cf88cadf9ca2143cdaa557c1ec7f8808040ffc
   RNSound: a1d01988e043aed5dbb476c2152b5ffb02446750
   RNStoreReview: 62d6afd7c37db711a594bbffca6b0ea3a812b7a8
-  RNVectorIcons: ac7bf6bfeafaf3ad34552cdc6eed6fb8c4b7c940
+  RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   yoga: 684513b14b03201579ba3cee20218c9d1298b0cc
 
-PODFILE CHECKSUM: 4f4dee0dcfb8005a1523a690c4fb147e6168bc23
+PODFILE CHECKSUM: 16364b0d34732bc62f42ae7327e7ece5d40b3c06
 
 COCOAPODS: 1.9.1
